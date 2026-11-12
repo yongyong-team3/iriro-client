@@ -1,24 +1,55 @@
 {
   "expo": {
-    "name": "cheonbyeon-app",
+    "name": "이리로",
     "slug": "cheonbyeon-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "kr.yongin.hackathon.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#3993D4",
         "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "kr.yongin.hackathon.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#3993D4",
+          "image": "./assets/splash-logo.png",
+          "imageWidth": 240
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "활동 거리와 경로를 기록하고 제보 위치를 정하기 위해 위치 정보를 사용합니다."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "산책로 현장 사진을 제보하기 위해 카메라를 사용합니다.",
+          "photosPermission": "산책로 현장 사진을 제보하기 위해 사진을 사용합니다."
+        }
+      ]
+    ],
+    "scheme": "cheonbyeon"
   }
 }
